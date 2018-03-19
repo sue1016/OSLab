@@ -29,7 +29,7 @@ int main()
     }
     else if(0 == cpid2)
     {
-        print("c");
+        printf("c");
     }
     else
     {
