@@ -5,6 +5,7 @@
 int main()
 {
     pid_t pid;
+    int ret = 0;
     pid = fork();
     
     if(pid == -1)
@@ -13,10 +14,18 @@ int main()
     } 
     else if(pid == 0)
     {
+       if((ret = execlp("./lab1_1","lab1_1",NULL)) < 0)
+       {
+           printf("execlp error");
+       }    
         
     }
-
-
+    else
+    {
+       printf("father process");
+    } 
+   
+    return 0;
 
 
 }
