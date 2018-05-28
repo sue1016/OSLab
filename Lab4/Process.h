@@ -1,3 +1,13 @@
+#include<iostream>
+
+#include<stdio.h>
+#include<stdlib.h>  
+
+#include<sys/types.h>
+#include<unistd.h>
+#include<pthread.h>
+#include<time.h>
+
 
 using namespace std;
 
@@ -13,7 +23,7 @@ class Process
 		int visited_;
  		int tempRunTime_;
         public:
-		Process();
+		Process(int pid,int priority,int runTime);
 	        int getPid();
 	        int getWaitTime();
 	        int getPriority();

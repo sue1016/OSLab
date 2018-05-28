@@ -1,24 +1,14 @@
-#include<iostream>
-
-#include<stdio.h>
-#include<stdlib.h>  
-
-#include<sys/types.h>
-#include<unistd.h>
-#include<pthread.h>
-#include<time.h>
-
-#define threadNum 20
-#include "lab4.cpp"
-Process::Process()
+#include "Process.h"
+Process::Process(int pid,int priority,int runTime)
 {
-	int n;
 	srand(time(NULL));
-	for( n=0; n < threadNum; n++)
-	{
-		tid_ =  
-	
-	}
+	pid_ = pid;
+	priority_ = priority;
+	runTime_ = runTime;
+        arriveTime_ = 0;
+	tempRunTime_ = runTime;
+	visited_ = 0;
+	waitTime_ = 0;
 
 }
 int Process::getPid()
