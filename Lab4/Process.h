@@ -1,3 +1,5 @@
+#ifndef PROCESS_H
+#define PROCESS_H
 #include<iostream>
 
 #include<stdio.h>
@@ -9,10 +11,7 @@
 #include<time.h>
 
 
-using namespace std;
-
-pthread_mutex_t Device_mutex;
-class Process
+class MyProcess
 {
 	private:
 		int pid_;
@@ -22,21 +21,25 @@ class Process
 		int arriveTime_;
 		int visited_;
  		int tempRunTime_;
+
         public:
-		Process(int pid,int priority,int runTime);
+		    MyProcess(int pid,int priority,int runTime);
+		    MyProcess();
+		    void setPid(int pid);
 	        int getPid();
 	        int getWaitTime();
 	        int getPriority();
-		int getRunTime();
-                int getArriveTime();
-		void setVisited(int visited);
-		int getVisited();
-		int getTempRunTime();
-		void setWaitTime(int waitTime);
-                void setTempRunTime(int tempRunTime);
-
-      
+	        void setPriority(int priority);
+		    int getRunTime();
+		    void setRunTime(int runTime);
+		    int getArriveTime();
+		    void setVisited(int visited);
+		    int getVisited();
+		    int getTempRunTime();
+		    void setWaitTime(int waitTime);
+		    void setTempRunTime(int tempRunTime);
 
 };
 
 
+#endif

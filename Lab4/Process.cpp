@@ -1,55 +1,78 @@
 #include "Process.h"
-Process::Process(int pid,int priority,int runTime)
+
+MyProcess::MyProcess(int pid,int priority,int runTime)
 {
-	srand(time(NULL));
 	pid_ = pid;
 	priority_ = priority;
 	runTime_ = runTime;
-        arriveTime_ = 0;
+	arriveTime_ = 0;
 	tempRunTime_ = runTime;
 	visited_ = 0;
 	waitTime_ = 0;
 
 }
-int Process::getPid()
+MyProcess::MyProcess()
+{
+	pid_ = -1;
+	priority_ = -1;
+	runTime_ = -1;
+	arriveTime_ = 0;
+	tempRunTime_ = runTime_;
+	visited_ = 0;
+	waitTime_ = 0;
+}
+void MyProcess::setRunTime(int runTime)
+{
+	runTime_ = runTime;
+}
+void MyProcess::setPriority(int priority)
+{
+	priority_ = priority;
+}
+void MyProcess::setPid(int pid)
+{
+	pid_ = pid;
+
+}
+int MyProcess::getPid()
 {
 	return pid_;
 }
-int Process::getWaitTime()
+int MyProcess::getWaitTime()
 {
 	return waitTime_;
 }
-int Process::getPriority()
+int MyProcess::getPriority()
 {
 	return priority_;
 }	
-int Process::getRunTime()
+int MyProcess::getRunTime()
 {
 	return runTime_;
 }
-int Process::getArriveTime()
+int MyProcess::getArriveTime()
 {
-	return arrivetime_;
+	return arriveTime_;
 }
-void Process::setVisited(int visited)
+void MyProcess::setVisited(int visited)
 {
 	visited_ = visited;
 }
-int Process::getVisited()
+int MyProcess::getVisited()
 {
 	return visited_;
 }
-int Process::getTempRunTime()
+int MyProcess::getTempRunTime()
 {
 	return tempRunTime_;
 }
-void Process::setWaitTime(int waitTime)
+void MyProcess::setWaitTime(int waitTime)
 {
 	waitTime_ = waitTime;
 }
-void Process::setTempRunTime(int tempRunTime)
+void MyProcess::setTempRunTime(int tempRunTime)
 {
        	tempRunTime_ = tempRunTime_ - tempRunTime;
 }
-      
+
 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -g   CMakeFiles/Lab4.dir/main.cpp.o CMakeFiles/Lab4.dir/Process.cpp.o CMakeFiles/Lab4.dir/Scheduler.cpp.o  -o Lab4 
