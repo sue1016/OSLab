@@ -72,7 +72,7 @@ void MyProcess::setWaitTime(int waitTime)
 }
 void MyProcess::setTempRunTime(int tempRunTime)
 {
-       	tempRunTime_ = tempRunTime_ - tempRunTime;
+       	tempRunTime_ = tempRunTime;
 }
 
 

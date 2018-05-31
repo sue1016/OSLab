@@ -71,41 +71,42 @@ void Scheduler::SJF()
 }
 void Scheduler::RR(int r)
 {
-        int totalTime;
+    int totalTime = 0;
 	for(int i = 0; i < processNum_; i++)
 	{
                 totalTime = totalTime + pChildren_[i].getRunTime();
-		         pChildren_[i].setVisited(1);
+                pChildren_[i].setVisited(0);
                 
 	}
 	std::cout<<"--------------RR----------------------"<<std::endl;
-        int start = 0;
+	int start = 0;
 	float waitTime = 0;
 	float avWait = 0;
         for(int j = 0; j < 20*processNum_; j = j + r)
         {
-	    int k = (j%(20*r))/r;
-            int tepRunTime = r;
-            if(pChildren_[k].getTempRunTime() > 0)
+            int k = (j % (20 * r)) / r;
+            std::cout<<pChildren_[k].getTempRunTime()<<std::endl;
+            if (pChildren_[k].getTempRunTime() > 0)
             {
-		    int tepRunTime = r;
-		    if(pChildren_[k].getTempRunTime() - r <= 0)
-		    {
-			    tepRunTime = pChildren_[k].getTempRunTime();
-			    pChildren_[k].setWaitTime(start + tepRunTime-pChildren_[k].getRunTime());
-		    }
-		      std::cout<<"Thread"<<pChildren_[j].getPid()<<": start "<<start<<";  run time "<<pChildren_[j].getRunTime()<<std::endl;
-		      start = start + tepRunTime;
-		      pChildren_[k].setTempRunTime(r);
-		    
-                   
+                int tepRunTime = r;
+                if (pChildren_[k].getTempRunTime() - r <= 0)
+                {
+                    tepRunTime = pChildren_[k].getTempRunTime();
+                    pChildren_[k].setWaitTime(start + tepRunTime - pChildren_[k].getRunTime());
+                }
+                std::cout << "Thread" << pChildren_[k].getPid() << ": start " << start << ";  run time "
+                          << pChildren_[k].getRunTime() << std::endl;
+                start = start + tepRunTime;
+                pChildren_[k].setTempRunTime(r);
+
             }
+        }
 	    for(int m = 0; m < processNum_; m++)
 	    {
 		    waitTime += pChildren_[m].getWaitTime();
 	    
 	    }
-        }
+
         avWait = waitTime / (float)processNum_;
         std::cout<<"total waiting time: "<<waitTime<<std::endl;
         std::cout<<"average waiting time: "<<avWait<<std::endl;
