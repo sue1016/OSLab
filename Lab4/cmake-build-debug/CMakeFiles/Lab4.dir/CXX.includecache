@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sue/mycode/OSLab/Lab4/Process.cpp
+Process.h
+/home/sue/mycode/OSLab/Lab4/Process.h
+
+/home/sue/mycode/OSLab/Lab4/Process.h
+iostream
+-
+stdio.h
+-
+stdlib.h
+-
+sys/types.h
+-
+unistd.h
+-
+pthread.h
+-
+time.h
+-
+
+/home/sue/mycode/OSLab/Lab4/Scheduler.cpp
+Scheduler.h
+/home/sue/mycode/OSLab/Lab4/Scheduler.h
+
+/home/sue/mycode/OSLab/Lab4/Scheduler.h
+Process.h
+/home/sue/mycode/OSLab/Lab4/Process.h
+
+/home/sue/mycode/OSLab/Lab4/main.cpp
+Scheduler.h
+/home/sue/mycode/OSLab/Lab4/Scheduler.h
+Process.h
+/home/sue/mycode/OSLab/Lab4/Process.h
+
