@@ -84,14 +84,13 @@ void createFile()
 }
 void writeFile()
 {
-    printf("writefile\n");
     char filename[30];
     printf("input filename:\n");
     scanf("%s",filename);
     if( open(filename,O_RDONLY) < 0 )
     {
         //文件不存在
-        printf("no such file");
+        printf("no such file\n");
     }
     else
     {
@@ -120,7 +119,7 @@ void readFile()
     if( open(filename,O_RDONLY) < 0 )
     {
         //文件不存在
-        printf("no such file");
+        printf("no such file\n");
     }
     else
     {
@@ -149,7 +148,7 @@ void changeMode()
      if( open(filename,O_RDONLY) < 0 )
     {
         //文件不存在
-        printf("no such file");
+        printf("no such file\n");
     }
     else
     {
@@ -177,7 +176,7 @@ void viewMode()
     if( open(filename,O_RDONLY) < 0 )
     {
         //文件不存在
-        printf("no such file");
+        printf("no such file\n");
     }
     else
     {
